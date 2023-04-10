@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getRockets } from '../../redux/rockets/rocketsSlice';
 import RocketLi from './RocketLi';
+import '../../styles/rockets/rocket.css';
 
 export default function Rockets() {
   const { rockets, isRocketLoading } = useSelector((state) => state.rockets);
@@ -15,7 +16,7 @@ export default function Rockets() {
   }
 
   return (
-    <ul>
+    <ul className="rockets">
       {rockets.map((rocket) => <RocketLi key={rocket.id} rocket={rocket} />)}
     </ul>
   );

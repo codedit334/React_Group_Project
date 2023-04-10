@@ -8,11 +8,16 @@ export default function RocketLi({ rocket }) {
   return (
     <li>
       <img src={rocket.flickr_image} alt={rocket.rocket_name} />
-      <h2>{rocket.rocket_name}</h2>
-      {rocket.reserved && <div>Reserved</div>}
-      <p>{rocket.description}</p>
-      {rocket.reserved && <button type="button" onClick={() => dispatch(cancelReservation(rocket.id))}>cancel Reservation</button>}
-      {!rocket.reserved && <button type="button" onClick={() => dispatch(reserveRocket(rocket.id))}>Reserve Rocket</button>}
+      <div>
+        <h2>{rocket.rocket_name}</h2>
+        <p>
+          {rocket.reserved && <span className="rocket-badge">Reserved</span>}
+          {' '}
+          {rocket.description}
+        </p>
+        {rocket.reserved && <button type="button" onClick={() => dispatch(cancelReservation(rocket.id))}>cancel Reservation</button>}
+        {!rocket.reserved && <button type="button" onClick={() => dispatch(reserveRocket(rocket.id))}>Reserve Rocket</button>}
+      </div>
     </li>
   );
 }
