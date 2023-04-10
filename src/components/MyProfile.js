@@ -7,8 +7,8 @@ export default function MyProfile() {
     <div>
       <div>
         <h2>My Missions</h2>
-        {missions && missions.map((mission) => mission.reserved && (
-          <div key={mission.mission_id}>{mission.mission_name}</div>
+        {missions && missions.map((mission) => (
+          mission.reserved ? <div key={mission.mission_id}>{mission.mission_name}</div> : ''
         ))}
       </div>
     </div>

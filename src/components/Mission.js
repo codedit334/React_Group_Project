@@ -21,8 +21,8 @@ export default function Mission() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchMissions());
-  }, []);
+    if(state.status === "idle") dispatch(fetchMissions());
+  }, [dispatch]);
 
   const missions = useSelector((state) => state.missions);
 
@@ -44,7 +44,7 @@ export default function Mission() {
               <th>Mission Name</th>
               <th>Description</th>
               <th>Status</th>
-              <th> Reserve</th>
+              <th>Reserve</th>
             </tr>
           </thead>
           <tbody>
