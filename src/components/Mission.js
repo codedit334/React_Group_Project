@@ -53,7 +53,7 @@ export default function Mission() {
                 <tr key={mission.mission_id + missions.missions.indexOf(mission)}>
                   <td>{mission.mission_name}</td>
                   <td>{mission.description}</td>
-                  <td>{mission.reserved ? 'Reserved' : 'Open'}</td>
+                  <td>{mission.reserved ? 'Active Member' : 'NOT A MEMBER'}</td>
                   <td>
                     {mission.reserved ? (
                       <button
