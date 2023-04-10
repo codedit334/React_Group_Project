@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,36 +7,38 @@
   margin-bottom: 2rem;
 }
 
-.logo-name{
+.logo-name {
   display: flex;
   align-items: center;
 }
-.logo-name img{
+
+.logo-name img {
   width: 5rem;
   height: 5rem;
   margin-right: 2rem;
 }
 
-.navbar ul{
+.navbar ul {
   list-style: none;
   display: flex;
   white-space: nowrap;
 }
 
-.navbar ul > li a{
+.navbar ul > li a {
   text-decoration: none;
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.5px;
   margin-left: 1.5rem;
 }
-.navbar ul > li:last-child a{
+
+.navbar ul > li:last-child a {
   margin-left: 0.75rem;
   padding-left: 0.75rem;
   border-left: 2px solid blue;
 }
 
-.active{
+.active {
   color: black;
   border-bottom: 1px solid black;
 }
