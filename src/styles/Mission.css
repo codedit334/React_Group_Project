@@ -1,7 +1,7 @@
 table tr:nth-of-type(odd) {
-    background-color: rgb(230, 230, 230);
+  background-color: rgb(230, 230, 230);
 }
 
 thead tr:nth-child(1) {
-    background-color: white;
+  background-color: white;
 }
