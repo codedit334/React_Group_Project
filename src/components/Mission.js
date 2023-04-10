@@ -20,11 +20,11 @@ const myStyle = {
 export default function Mission() {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if(state.status === "idle") dispatch(fetchMissions());
-  }, [dispatch]);
-
   const missions = useSelector((state) => state.missions);
+
+  useEffect(() => {
+    if (missions.status === 'idle') dispatch(fetchMissions());
+  }, [dispatch]);
 
   const handleReserveClick = (id) => {
     dispatch(reserveMission(id));
