@@ -50,7 +50,7 @@ export default function Mission() {
           <tbody>
             {missions.missions
               && missions.missions.map((mission) => (
-                <tr key={mission.mission_id}>
+                <tr key={mission.mission_id + missions.missions.indexOf(mission)}>
                   <td>{mission.mission_name}</td>
                   <td>{mission.description}</td>
                   <td>{mission.reserved ? 'Reserved' : 'Open'}</td>

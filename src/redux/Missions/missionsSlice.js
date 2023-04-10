@@ -8,37 +8,43 @@ const initialState = {
   error: null,
 };
 
-/* eslint-disable */
 const missionsSlice = createSlice({
   name: 'missions',
   initialState,
   reducers: {
     missionAdded(state, action) {
-      state.missions = action.payload;
+      return { ...state, missions: [...state.missions, ...action.payload] };
     },
     reserveMission(state, action) {
       const id = action.payload;
       const newArr = state.missions.map((item) => {
         if (item.mission_id === id) {
-          item.reserved = true;
+          // item.reserved = true;
+          console.log({ ...item, reserved: true });
+          return { ...item, reserved: true };
         }
         return item;
       });
-      console.log(newArr);
-      state.missions = newArr;
+      // state.missions = newArr;
+      // return [...state.missions, ...newArr];
+      return { ...state, missions: [...state.missions, ...newArr] };
     },
     leaveMission(state, action) {
       const id = action.payload;
       const newArr = state.missions.map((item) => {
         if (item.mission_id === id) {
-          item.reserved = false;
+          // item.reserved = false;
+          return { ...item, reserved: true };
         }
         return item;
       });
-      console.log(newArr);
-      state.missions = newArr;
+      // state.missions = newArr;
+      // return [...state.missions, ...newArr];
+      return { ...state, missions: [...state.missions, ...newArr] };
     },
   },
+  /* eslint-disable */
+
   extraReducers(builder) {
     builder
       .addCase(fetchMissions.pending, (state) => {
@@ -59,7 +65,8 @@ export const { missionAdded, reserveMission, leaveMission } = missionsSlice.acti
 
 export const fetchMissions = createAsyncThunk(
   'missions/fetchMissions',
-  async (initialState, { dispatch }) => { // eslint-disable-line
+  async (initialState, { dispatch }) => {
+    // eslint-disable-line
     const response = await axios.get(url);
     const newArr = await response.data.map((item) => ({
       mission_id: item.mission_id,
