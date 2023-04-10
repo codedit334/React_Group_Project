@@ -1,5 +1,4 @@
-
-import React from "react"
+import React from 'react';
 
 import {
   createBrowserRouter,
@@ -10,7 +9,7 @@ import {
 import './styles/App.css';
 import NavBar from './components/NavBar';
 import MyProfile from './components/MyProfile';
-import Mission from "./components/Mission";
+import Mission from './components/Mission';
 
 const router = createBrowserRouter(
   createRoutesFromElements(

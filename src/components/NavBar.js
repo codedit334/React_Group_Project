@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 
 export default function NavBar() {
@@ -12,7 +12,7 @@ export default function NavBar() {
           <NavLink>Rockets</NavLink>
           <NavLink>Dragons</NavLink>
           <NavLink to="mission">Mission</NavLink>
-          <NavLink to="my_profile" >My Profile</NavLink>
+          <NavLink to="my_profile">My Profile</NavLink>
         </ul>
       </nav>
       <main>

@@ -1,49 +1,51 @@
 import axios from "axios"; // eslint-disable-line
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const url = "";
+const url = 'https://api.spacexdata.com/v3/missions';
 const initialState = {
-  books: [],
+  missions: [],
   status: 'idle',
   error: null,
 };
 
-export const fetchMissions = createAsyncThunk('posts/fetchMissions', async () => {
-  const response = await axios.get(url);
-  return response.data;
-});
-
-export const addNewBook = createAsyncThunk(
-  'posts/addNewBook',
-  async (initialBook, { dispatch }) => {
-    const response = await axios.post(url, initialBook);
-    dispatch(fetchMissions());
-    return response.data;
-  },
-);
-
-export const deleteBook = createAsyncThunk(
-  'posts/deleteBook',
-  async (initialBook, { dispatch }) => {
-    const response = await axios.delete(`${url}/${initialBook}`, initialBook);
-    dispatch(fetchMissions());
-    return response.data;
-  },
-);
-
+/* eslint-disable */
 const missionsSlice = createSlice({
-  name: 'books',
+  name: 'missions',
   initialState,
-  reducers: { },
+  reducers: {
+    missionAdded(state, action) {
+      state.missions = action.payload;
+    },
+    reserveMission(state, action) {
+      const id = action.payload;
+      const newArr = state.missions.map((item) => {
+        if (item.mission_id === id) {
+          item.reserved = true;
+        }
+        return item;
+      });
+      console.log(newArr);
+      state.missions = newArr;
+    },
+    leaveMission(state, action) {
+      const id = action.payload;
+      const newArr = state.missions.map((item) => {
+        if (item.mission_id === id) {
+          item.reserved = false;
+        }
+        return item;
+      });
+      console.log(newArr);
+      state.missions = newArr;
+    },
+  },
   extraReducers(builder) {
-    /* eslint-disable */
     builder
       .addCase(fetchMissions.pending, (state) => {
         state.status = "loading";
       })
       .addCase(fetchMissions.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.books = action.payload
       })
       .addCase(fetchMissions.rejected, (state, action) => {
         state.status = "failed";
@@ -53,6 +55,20 @@ const missionsSlice = createSlice({
   },
 });
 
-export const { bookAdded, bookRemoved } = missionsSlice.actions;
+export const { missionAdded, reserveMission, leaveMission } = missionsSlice.actions;
+
+export const fetchMissions = createAsyncThunk(
+  'missions/fetchMissions',
+  async (initialState, { dispatch }) => { // eslint-disable-line
+    const response = await axios.get(url);
+    const newArr = await response.data.map((item) => ({
+      mission_id: item.mission_id,
+      mission_name: item.mission_name,
+      description: item.description,
+    }));
+    dispatch(missionAdded(newArr));
+    // return response.data;
+  },
+);
 
 export default missionsSlice.reducer;
