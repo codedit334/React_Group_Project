@@ -34,6 +34,7 @@ export default function Mission() {
   };
   return (
     <div>
+      {missions.status === 'loading' && <h2>Loading...</h2>}
       {missions.error ? (
         <p>{missions.error}</p>
       ) : (

@@ -6,7 +6,6 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom';
-import './styles/App.css';
 import NavBar from './components/NavBar';
 import MyProfile from './components/MyProfile';
 import Mission from './components/Mission';

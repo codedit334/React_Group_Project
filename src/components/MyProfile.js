@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 
 export default function MyProfile() {
   const missions = useSelector((state) => state.missions.missions);
-  console.log(missions);
   return (
     <div>
       <div>
