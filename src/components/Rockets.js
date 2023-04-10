@@ -8,7 +8,7 @@ export default function Rockets() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getRockets());
-  }, []);
+  }, [dispatch]);
 
   if (isRocketLoading) {
     return (<h2>Loading...</h2>);
