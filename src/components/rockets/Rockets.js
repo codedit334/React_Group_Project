@@ -8,8 +8,10 @@ export default function Rockets() {
   const { rockets, isRocketLoading } = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getRockets());
-  }, [dispatch]);
+    if (!rockets.length) {
+      dispatch(getRockets());
+    }
+  }, [dispatch, rockets]);
 
   if (isRocketLoading) {
     return (<h2>Loading...</h2>);
