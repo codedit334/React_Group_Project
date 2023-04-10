@@ -1,0 +1,25 @@
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid gray;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.logo-name{
+  display: flex;
+  align-items: center;
+}
+.logo-name img{
+  width: 5rem;
+  height: 5rem;
+  margin-right: 2rem;
+}
+
+.navbar ul{
+  list-style: none;
+  display: flex;
+  gap: 2%;
+  white-space: nowrap;
+}
