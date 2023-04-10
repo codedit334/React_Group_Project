@@ -1,0 +1,27 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+.main-container {
+    padding: 1% 3%;
+    display: grid;
+    grid-template-columns: 20% auto;
+}
+
+.details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.details-container > button {
+    width: 20%;
+    padding: 4px;
+}
