@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { reserveRocket, cancelReservation } from '../redux/rockets/rocketsSlice';
+import { reserveRocket, cancelReservation } from '../../redux/rockets/rocketsSlice';
 
 export default function RocketLi({ rocket }) {
   const dispatch = useDispatch();
