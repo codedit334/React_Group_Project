@@ -13,11 +13,12 @@ const missionsSlice = createSlice({
   initialState,
   reducers: {
     missionAdded(state, action) {
-      return { ...state, missions: [...state.missions, ...action.payload] };
+      const newArr = state.missions.concat(action.payload);
+      return { ...state, missions: newArr };
     },
     reserveMission(state, action) {
       const id = action.payload;
-      const newArr = state.missions.map((item) => {
+      let newArr = state.missions.find((item) => {
         if (item.mission_id === id) {
           // item.reserved = true;
           console.log({ ...item, reserved: true });
@@ -27,11 +28,15 @@ const missionsSlice = createSlice({
       });
       // state.missions = newArr;
       // return [...state.missions, ...newArr];
-      return { ...state, missions: [...state.missions, ...newArr] };
+      // return { ...state, missions: [...state.missions, ...newArr] };
+      // console.log([newArr, ...state.missions]);
+      newArr = state.missions.concat(newArr);
+      console.log(newArr);
+      return { ...state, missions: newArr };
     },
     leaveMission(state, action) {
       const id = action.payload;
-      const newArr = state.missions.map((item) => {
+      let newArr = state.missions.map((item) => {
         if (item.mission_id === id) {
           // item.reserved = false;
           return { ...item, reserved: true };
@@ -40,7 +45,9 @@ const missionsSlice = createSlice({
       });
       // state.missions = newArr;
       // return [...state.missions, ...newArr];
-      return { ...state, missions: [...state.missions, ...newArr] };
+      // return { ...state, missions: [...state.missions, ...newArr] };
+      newArr = newArr.concat(state.missions);
+      return { ...state, missions: newArr };
     },
   },
   /* eslint-disable */
