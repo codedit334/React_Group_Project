@@ -1,36 +1,22 @@
-// 20230320081852
-// https://raw.githubusercontent.com/microverseinc/linters-config/master/react-redux/.eslintrc.json
-
 {
-  "env": {
-    "browser": true,
-    "es6": true,
-    "jest": true
-  },
-  "parser": "@babel/eslint-parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
+    "env": {
+        "browser": true,
+        "es2021": true
     },
-    "ecmaVersion": 2018,
-    "sourceType": "module"
-  },
-  "extends": [
-    "airbnb",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended"
-  ],
-  "plugins": ["react"],
-  "rules": {
-    "react/jsx-filename-extension": [
-      "warn",
-      {
-        "extensions": [".js", ".jsx"]
-      }
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
     ],
-    "react/react-in-jsx-scope": "off",
-    "import/no-unresolved": "off",
-    "no-shadow": "off"
-  },
-  "ignorePatterns": ["dist/", "build/"]
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+    }
 }

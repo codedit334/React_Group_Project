@@ -1,10 +1,13 @@
+
+import React from "react"
+
 import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
   RouterProvider,
 } from 'react-router-dom';
-import './App.css';
+import './styles/App.css';
 import NavBar from './components/NavBar';
 import MyProfile from './components/MyProfile';
 
