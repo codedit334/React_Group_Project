@@ -32,7 +32,7 @@ export default function DragonContent({ dragon }) {
               dispatch(reserve(dragon.id));
             }}
           >
-            Reserve Rocket
+            Reserve Dragon
           </button>
         )}
       </div>
