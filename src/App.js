@@ -1,5 +1,4 @@
-
-import React from "react"
+import React from 'react';
 
 import {
   createBrowserRouter,
@@ -10,7 +9,7 @@ import {
 import './styles/App.css';
 import NavBar from './components/NavBar';
 import MyProfile from './components/MyProfile';
-import Dragons from "./components/Dragons";
+import Dragons from './components/Dragons/Dragons';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +18,7 @@ const router = createBrowserRouter(
       <Route path="/Dragons" element={<Dragons />} />
     </Route>,
   ),
+
 );
 
 function App() {
