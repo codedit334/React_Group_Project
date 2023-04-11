@@ -69,8 +69,8 @@ export default function MyProfile() {
   const { dragons, isLoading } = useSelector((state) => state.dragons);
 
   return (
-    <div>
-      <div>
+    <div className="main-container">
+      <div className="content">
         <h2>My Missions</h2>
         <p id="mission-not-taken" />
         {missions && missions.find((mission) => 'reserved' in mission && mission.reserved === true) ? (
