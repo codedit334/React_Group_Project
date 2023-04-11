@@ -12,7 +12,7 @@ export default function NavBar() {
           <h1>Space Travelers&#39; Hub</h1>
         </div>
         <ul>
-          <NavLink>Rockets</NavLink>
+          <NavLink to="/">Rockets</NavLink>
           <NavLink to="Dragons">Dragons</NavLink>
           <NavLink to="mission">Mission</NavLink>
           <NavLink to="my_profile">My Profile</NavLink>
