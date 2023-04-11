@@ -21,6 +21,7 @@ export default function DragonContent({ dragon }) {
             onClick={() => {
               dispatch(cancel(dragon.id));
             }}
+            className="cancel-btn"
           >
             Cancel Reservation
           </button>
@@ -31,6 +32,7 @@ export default function DragonContent({ dragon }) {
             onClick={() => {
               dispatch(reserve(dragon.id));
             }}
+            className="reseved-btn"
           >
             Reserve Rocket
           </button>
