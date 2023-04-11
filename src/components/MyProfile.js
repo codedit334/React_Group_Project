@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { cancel } from '../redux/Dragons/dragonSlice';
 import { cancelReservation } from '../redux/rockets/rocketsSlice';
 import { leaveMission } from '../redux/Missions/missionsSlice';
+import '../styles/MyProfile.css';
 
 function IsMissionTaken({ mission }) {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ function IsMissionTaken({ mission }) {
   return (
     <div>
       {mission.reserved ? (
-        <div key={mission.mission_id}>
+        <div key={mission.mission_id} className="details">
           <div>{mission.mission_name}</div>
           <button type="button" onClick={() => dispatch(leaveMission(mission.mission_id))}>Leave Mission</button>
         </div>
@@ -28,7 +29,7 @@ function IsRocketReserved({ rocket }) {
   return (
     <div>
       {rocket.reserved ? (
-        <div key={rocket.id}>
+        <div key={rocket.id} className="details">
           <div>{rocket.rocket_name}</div>
           <button
             type="button"
@@ -50,7 +51,7 @@ function IsDragonReserved({ dragon }) {
   return (
     <div>
       {dragon.reserved ? (
-        <div key={dragon.id}>
+        <div key={dragon.id} className="details">
           <div>{dragon.name}</div>
           <button type="button" onClick={() => dispatch(cancel(dragon.id))}>
             Cancel Reservation
@@ -74,10 +75,11 @@ export default function MyProfile() {
         <h2>My Missions</h2>
         <p id="mission-not-taken" />
         {missions && missions.find((mission) => 'reserved' in mission && mission.reserved === true) ? (
-          missions.map((mission) => (
-            <div key={mission.mission_id}>
+          missions.map((mission) => (mission.reserved && (
+            <div key={mission.mission_id} className="item">
               <IsMissionTaken mission={mission} />
             </div>
+          )
           ))
         ) : (
           <div>No Missions Taken</div>
@@ -85,16 +87,17 @@ export default function MyProfile() {
         {status === 'loading' && <div>Loading...</div>}
       </div>
 
-      <div>
+      <div className="content">
         <h2>My Rockets</h2>
         {rockets
         && rockets.find(
           (rocket) => 'reserved' in rocket && rocket.reserved === true,
         ) ? (
-            rockets.map((rocket) => (
-              <div key={rocket.id}>
+            rockets.map((rocket) => (rocket.reserved && (
+              <div key={rocket.id} className="item">
                 <IsRocketReserved rocket={rocket} />
               </div>
+            )
             ))
           ) : (
             <div>No Rockets Reserved</div>
@@ -102,16 +105,17 @@ export default function MyProfile() {
         {isRocketLoading && <div>Loading...</div>}
       </div>
 
-      <div>
+      <div className="content">
         <h2>My Dragons</h2>
         {dragons
         && dragons.find(
           (dragon) => 'reserved' in dragon && dragon.reserved === true,
         ) ? (
-            dragons.map((dragon) => (
-              <div key={dragon.id}>
+            dragons.map((dragon) => (dragon.reserved && (
+              <div key={dragon.id} className="item">
                 <IsDragonReserved dragon={dragon} />
               </div>
+            )
             ))
           ) : (
             <div>No Dragons Reserved</div>

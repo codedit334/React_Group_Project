@@ -15,6 +15,7 @@ export default function NavBar() {
           <NavLink to="/">Rockets</NavLink>
           <NavLink to="Dragons">Dragons</NavLink>
           <NavLink to="mission">Mission</NavLink>
+          <hr />
           <NavLink to="my_profile">My Profile</NavLink>
         </ul>
       </nav>
