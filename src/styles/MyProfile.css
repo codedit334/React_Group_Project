@@ -9,17 +9,44 @@
 }
 
 .main-container {
-    display: flex;
+  display: flex;
   gap: 20%;
   padding: 1% 4%;
 }
 
 .content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 25%;
-        align-items: center;
-        border: 1px solid #000;
-        gap: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.content > h2 {
+    padding: 2% 0;
+    align-self: baseline;
+}
+
+.content > div {
+    padding: 2% 0;
+    align-self: baseline;
+}
+
+.item {
+    border: 1px solid #4e4b4b6e;
+  width: 100%;
+  padding: 2% 4%;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.details > button {
+    width: 45%;
+  color: red;
+  font-size: small;
+  border-color: red;
+  padding: 5px;
 }
