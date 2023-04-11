@@ -8,9 +8,9 @@ import store from './redux/store';
 import './styles/index.css';
 import App from './App';
 
-store.dispatch(getRockets())
-store.dispatch(fetchMissions())
-store.dispatch(fetchDragons())
+store.dispatch(getRockets());
+store.dispatch(fetchMissions());
+store.dispatch(fetchDragons());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
