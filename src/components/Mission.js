@@ -39,9 +39,9 @@ export default function Mission() {
         <p>{missions.error}</p>
       ) : (
         <table border={1} style={myStyle.table}>
-          <thead>
+          <thead className="t-headers">
             <tr>
-              <th>Mission Name</th>
+              <th>Mission</th>
               <th>Description</th>
               <th>Status</th>
               <th>Reserve</th>
@@ -53,8 +53,8 @@ export default function Mission() {
                 <tr key={mission.mission_id + missions.missions.indexOf(mission)}>
                   <td className="m-name">{mission.mission_name}</td>
                   <td className="m-desc">{mission.description}</td>
-                  <td className="m-reserved">{mission.reserved ? 'Active Member' : 'NOT A MEMBER'}</td>
-                  <td>
+                  <td className="center">{mission.reserved ? <span className="active-reserved">  Active Member  </span> : <span className="m-reserved">NOT A MEMBER </span>}</td>
+                  <td className="center">
                     {mission.reserved ? (
                       <button
                         type="button"
@@ -67,6 +67,7 @@ export default function Mission() {
                       <button
                         type="button"
                         onClick={() => handleReserveClick(mission.mission_id)}
+                        className="btn"
                       >
                         Join Mission
                       </button>
