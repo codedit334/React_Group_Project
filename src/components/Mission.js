@@ -51,14 +51,15 @@ export default function Mission() {
             {missions.missions
               && missions.missions.map((mission) => (
                 <tr key={mission.mission_id + missions.missions.indexOf(mission)}>
-                  <td>{mission.mission_name}</td>
-                  <td>{mission.description}</td>
-                  <td>{mission.reserved ? 'Active Member' : 'NOT A MEMBER'}</td>
+                  <td className="m-name">{mission.mission_name}</td>
+                  <td className="m-desc">{mission.description}</td>
+                  <td className="m-reserved">{mission.reserved ? 'Active Member' : 'NOT A MEMBER'}</td>
                   <td>
                     {mission.reserved ? (
                       <button
                         type="button"
                         onClick={() => handleCancelClick(mission.mission_id)}
+                        className="active-btn"
                       >
                         Leave Mission
                       </button>
