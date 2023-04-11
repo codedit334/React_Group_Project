@@ -7,25 +7,12 @@ import {
 } from '../redux/Missions/missionsSlice';
 import '../styles/Mission.css';
 
-const myStyle = {
-  table: {
-    margin: '0 4%',
-    borderCollapse: 'collapse',
-  },
-  th: {
-    backgroundColor: 'white',
-  },
-};
-
 export default function Mission() {
   const dispatch = useDispatch();
-
   const missions = useSelector((state) => state.missions);
-
   useEffect(() => {
     if (missions.status === 'idle') dispatch(fetchMissions());
   }, [dispatch]);
-
   const handleReserveClick = (id) => {
     dispatch(reserveMission(id));
   };
@@ -38,7 +25,7 @@ export default function Mission() {
       {missions.error ? (
         <p>{missions.error}</p>
       ) : (
-        <table border={1} style={myStyle.table}>
+        <table>
           <thead className="t-headers">
             <tr>
               <th>Mission</th>
