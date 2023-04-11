@@ -8,7 +8,6 @@
   text-decoration: none;
 }
 
-
 table tr:nth-of-type(odd) {
   background-color: rgb(230, 230, 230);
 }
@@ -28,7 +27,7 @@ td {
 }
 
 .t-headers {
-text-align: justify;
+  text-align: justify;
 }
 
 .m-name {
@@ -43,7 +42,7 @@ text-align: justify;
   width: 60%;
 }
 
-.btn{
+.btn {
   padding: 10px;
   font-size: large;
 }
