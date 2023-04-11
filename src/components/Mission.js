@@ -7,25 +7,12 @@ import {
 } from '../redux/Missions/missionsSlice';
 import '../styles/Mission.css';
 
-const myStyle = {
-  table: {
-    margin: '0 4%',
-    borderCollapse: 'collapse',
-  },
-  th: {
-    backgroundColor: 'white',
-  },
-};
-
 export default function Mission() {
   const dispatch = useDispatch();
-
   const missions = useSelector((state) => state.missions);
-
   useEffect(() => {
     if (missions.status === 'idle') dispatch(fetchMissions());
   }, [dispatch]);
-
   const handleReserveClick = (id) => {
     dispatch(reserveMission(id));
   };
@@ -38,10 +25,10 @@ export default function Mission() {
       {missions.error ? (
         <p>{missions.error}</p>
       ) : (
-        <table border={1} style={myStyle.table}>
-          <thead>
+        <table>
+          <thead className="t-headers">
             <tr>
-              <th>Mission Name</th>
+              <th>Mission</th>
               <th>Description</th>
               <th>Status</th>
               <th>Reserve</th>
@@ -51,14 +38,15 @@ export default function Mission() {
             {missions.missions
               && missions.missions.map((mission) => (
                 <tr key={mission.mission_id + missions.missions.indexOf(mission)}>
-                  <td>{mission.mission_name}</td>
-                  <td>{mission.description}</td>
-                  <td>{mission.reserved ? 'Active Member' : 'NOT A MEMBER'}</td>
-                  <td>
+                  <td className="m-name">{mission.mission_name}</td>
+                  <td className="m-desc">{mission.description}</td>
+                  <td className="center">{mission.reserved ? <span className="active-reserved">  Active Member  </span> : <span className="m-reserved">NOT A MEMBER </span>}</td>
+                  <td className="center">
                     {mission.reserved ? (
                       <button
                         type="button"
                         onClick={() => handleCancelClick(mission.mission_id)}
+                        className="active-btn"
                       >
                         Leave Mission
                       </button>
@@ -66,6 +54,7 @@ export default function Mission() {
                       <button
                         type="button"
                         onClick={() => handleReserveClick(mission.mission_id)}
+                        className="btn"
                       >
                         Join Mission
                       </button>
