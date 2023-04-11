@@ -55,7 +55,7 @@ describe('Rockets component', () => {
     );
 
     fireEvent.click(btn.getAllByText('Reserve Rocket')[0]);
-   
-    expect(store.getActions()[0]).toEqual({ type: 'rockets/reserveRocket', payload: 1 })
+
+    expect(store.getActions()[0]).toEqual({ type: 'rockets/reserveRocket', payload: 1 });
   });
 });

@@ -55,7 +55,7 @@ describe('Dragons component', () => {
     );
 
     fireEvent.click(btn.getAllByText('Reserve Dragon')[0]);
-   
-    expect(store.getActions()[0]).toEqual({ type: 'dragons/reserve', payload: 1 })
+
+    expect(store.getActions()[0]).toEqual({ type: 'dragons/reserve', payload: 1 });
   });
 });

@@ -54,7 +54,7 @@ describe('Mission component', () => {
     );
 
     fireEvent.click(btn.getAllByText('Join Mission')[0]);
-   
+
     expect(store.getActions()[0]).toEqual({ type: 'missions/reserveMission', payload: 1 });
   });
 });
