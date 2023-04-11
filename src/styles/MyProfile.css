@@ -22,30 +22,30 @@
 }
 
 .content > h2 {
-    padding: 2% 0;
-    align-self: baseline;
+  padding: 2% 0;
+  align-self: baseline;
 }
 
 .content > div {
-    padding: 2% 0;
-    align-self: baseline;
+  padding: 2% 0;
+  align-self: baseline;
 }
 
 .item {
-    border: 1px solid #4e4b4b6e;
+  border: 1px solid #4e4b4b6e;
   width: 100%;
   padding: 2% 4%;
 }
 
-.details{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding: 1%;
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 1%;
 }
 
 .details > button {
-    width: 45%;
+  width: 45%;
   color: red;
   font-size: small;
   border-color: red;
