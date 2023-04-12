@@ -16,7 +16,7 @@ export default function RocketLi({ rocket }) {
           {rocket.description}
         </p>
         {rocket.reserved && <button type="button" onClick={() => dispatch(cancelReservation(rocket.id))} className="cancel-btn">Cancel Reservation</button>}
-        {!rocket.reserved && <button type="button" onClick={() => dispatch(reserveRocket(rocket.id))} className="reseved-btn">Reserve Rocket</button>}
+        {!rocket.reserved && <button type="button" onClick={() => dispatch(reserveRocket(rocket.id))} className="rocketreseved-btn">Reserve Rocket</button>}
       </div>
     </li>
   );
