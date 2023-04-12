@@ -18,7 +18,13 @@ nav {
 
 nav > ul {
   display: flex;
-  gap: 10px;
+  gap: 18px;
+  font-size: medium;
+  font-weight: 500;
+}
+
+a {
+  color: #2c94f0;
 }
 
 .logo {
@@ -30,4 +36,9 @@ nav > ul {
 
 .logo > img {
   width: 80px;
+}
+
+.active {
+  color: black;
+  text-decoration: underline;
 }

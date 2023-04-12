@@ -1,0 +1,53 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+.main-container {
+  display: flex;
+  gap: 20%;
+  padding: 1% 4%;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.content > h2 {
+  padding: 2% 0;
+  align-self: baseline;
+}
+
+.content > div {
+  padding: 2% 0;
+  align-self: baseline;
+}
+
+.item {
+  border: 1px solid #4e4b4b6e;
+  width: 100%;
+  padding: 2% 4%;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 1%;
+}
+
+.details > button {
+  width: 45%;
+  color: red;
+  font-size: small;
+  border-color: red;
+  padding: 5px;
+}

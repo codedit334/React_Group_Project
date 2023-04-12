@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import logo from '../Assets/logo.png';
-import '../styles/NavBar.css';
+import '../styles/Navstyle.css';
 
 export default function NavBar() {
   return (
@@ -15,6 +15,7 @@ export default function NavBar() {
           <NavLink to="/">Rockets</NavLink>
           <NavLink to="Dragons">Dragons</NavLink>
           <NavLink to="mission">Mission</NavLink>
+          <hr />
           <NavLink to="my_profile">My Profile</NavLink>
         </ul>
       </nav>
